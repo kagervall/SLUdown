@@ -1,14 +1,9 @@
 ---
 author:
-  - name: Yihui Xie
-    affiliation: RStudio
-    address: |
-      First line  
-      Second line
-    email: <name@company.com>
-    url: <https://rstudio.com>
-  - name: Romain Lesur
-    affiliation: Affiliation
+  - name: First Author
+    email: <first.author@slu.se>
+  - name: Second Author
+    email: <first.author@slu.se>
 title: "A Capitalized Title: Something about a Package **foo**"
 shorttitle: "**foo**:  A Capitalized Title"
 abstract: |
@@ -19,7 +14,7 @@ links-to-footnotes: true
 paged-footnotes: true
 bibliography: index.bib
 output: 
-  pagedown::jss_paged:
+  SLUdown::allman:
     self_contained: false
 # uncomment this line to produce HTML and PDF in RStudio:
 #knit: pagedown::chrome_print
