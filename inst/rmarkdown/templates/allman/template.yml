@@ -1,0 +1,4 @@
+name: SLU document based on template "allman"
+description: >
+   Create a paged HTML document with the look of SLU-template "allman".
+create_dir: FALSE
