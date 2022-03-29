@@ -1,0 +1,10 @@
+Package: SLUdown
+Type: Package
+Title: Rmarkdown template for SLU
+Version: 0.1.0
+Author: Anders Kagervall
+Maintainer: Anders Kagervall <yourself@somewhere.net>
+Description: Rmarkdown template for SLU. Based om the Word-template "allman"
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
