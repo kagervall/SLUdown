@@ -6,8 +6,10 @@
 \usage{
 allman(
   ...,
-  css = c("jss-fonts", "jss-page", "jss"),
-  template = pagedown:::pkg_resource("html", "allman.html", package = "SLUdown"),
+  css = system.file("resources", "css", c("SLU-fonts.css", "SLU-page.css", "SLU.css"),
+    package = "SLUdown", mustWork = TRUE),
+  template = system.file("resources", "html", "allman.html", package = "SLUdown",
+    mustWork = TRUE),
   csl = pagedown:::pkg_resource("csl", "journal-of-statistical-software.csl"),
   highlight = NULL,
   pandoc_args = NULL

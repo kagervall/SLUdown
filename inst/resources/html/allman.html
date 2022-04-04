@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="$if(lang)$$lang$$else$en-US$endif$" xml:lang="$if(lang)$$lang$$else$sv-SE$endif$">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$if(lang)$$lang$$else$sv-SE$endif$" xml:lang="$if(lang)$$lang$$else$sv-SE$endif$">
 
 <head>
 
@@ -10,7 +10,7 @@
 <meta name="generator" content="pandoc">
 <meta name="viewport" content="width=device-width">
 <meta property="dc:type" content="Text">
-<meta property="dc:language" content="$if(lang)$$lang$$else$en$endif$">
+<meta property="dc:language" content="$if(lang)$$lang$$else$sv$endif$">
 <meta property="dc:title og:title" content="$pagetitle$">
 $if(url)$<meta property="dc:identifier og:url" content="$url$">$endif$
 <meta property="og:image" content="https://www.slu.se/globalassets/gem/logo-smartphone.png?width=39&height=39&mode=crop">
@@ -18,8 +18,9 @@ $if(url)$<meta property="dc:identifier og:url" content="$url$">$endif$
 <meta name="description" property="dc:description og:description schema:description" content="$if(description)$$description$$else$$pagetitle$$endif$">
 $for(author-meta)$<meta name="author" content="$author-meta$">$endfor$
 $if(date-meta)$<meta name="date" content="$date-meta$">$endif$
+<!--
 <meta name="keywords" property="dc:subject" content="$for(keywords-plain)$$keywords-plain$$sep$, $endfor$">
-
+-->
 <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
 
 <script>
@@ -103,7 +104,13 @@ $if(mathjax)$
 $endif$
 $endif$
 
+$for(css)$
+<!-- for(css) -->
+<link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+$endfor$
+
 $for(header-includes)$
+<!-- for(header-includes) -->
 $header-includes$
 $endfor$
 
@@ -127,9 +134,6 @@ $highlighting-css$
 </style>
 $endif$
 
-$for(css)$
-<link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
-$endfor$
 
 </head>
 
@@ -150,21 +154,30 @@ $for(include-before)$
 $include-before$
 $endfor$
 
-<header class="document-header"> <!-- Class document header will add logo as background  -->
-<p class="header-meta">
-$if(month)$
-$if(year)$
-$if(volume)$
-$if(issue)$
-  <span class="issue">$month$ $year$, Volume $volume$, Issue $issue$.</span>
-$endif$
-$endif$
-$endif$
-$endif$
-$if(doi)$
-  <a href="https://doi.org/$doi$" class="doi">doi: $doi$</a>
-$endif$
-</p>
+<header class="document-header"> <!-- Rule @page :first in SLU-page.css will add logo as background  -->
+<div class="header-container">
+  <div class="logo-text">
+    Sveriges lantbruksuniversitet<br/>
+    Swedish University of Agricultural Sciences
+  </div>
+  <div class="item2"></div>
+  <div class="item3"></div>  
+  <div class="orgname-text">
+    $if(orgname)$
+    <b>$orgname$</b>
+    $endif$
+    $if(orgadditional)$
+    </br>
+    $orgadditional$
+    $endif$
+  </div>
+  <div class="doctype-text">$if(doctype)$$doctype$$endif$</div>
+  <div class="sluid-text">$if(sluid)$SLU ID: $sluid$$endif$</div>
+  <div class="item7"></div>
+  <div class="date-text">$if(date)$$date$$endif$</div>  
+  <div class="item9"></div>  
+</div>
+
 </header>
 
 <article>
@@ -206,50 +219,43 @@ $endif$
 </section>
 </section>
 
+
+
 <main role="main">
 $body$
 </main>
 
+<footer class="document-footer">
+  <div class="footer-container">
+  <div class="footer-text">
+    Postadress: Ekerö</br>
+    Besöksadress: Ekerö</br>
+    Org nr: 202100-2817</br>
+    www.slu.se
+  </div>
+  <div class="footer-text">
+    Tel: 018-67 10 00(vx)</br>
+    Mobilnr: XXX-XXX</br>
+    fornamn.efternamn@slu.se
+  </div>
+  </div>
+</footer>
+<!--
+</div>
+-->
+<!--
 <footer class="article-footer">
-$for(author)$
-$if(author.data.address)$
-<h3 class="affil-header">Affiliation:</h3>
-<address>
-<p class="author">$author.data.name$</p>
-<p class="author-affil">$author.data.affiliation$</p>
-<p class="author-address">$author.data.address$</p>
-$if(author.data.email)$<p>E-mail: $author.data.email$</p>$endif$
-$if(author.data.url)$<p>URL: $author.data.url$</p>$endif$
-</address>
-$endif$
-$endfor$
 <div class="last-page-footer">
-<p class="jss-meta">
-<img class="journal-name" alt="Journal of Statistical Software" src="https://www.jstatsoft.org/public/journals/1/homeHeaderTitleImage_en_US.png"> <a class="uri" href="https://www.jstatsoft.org/">http://www.jstatsoft.org/</a><br>
-published by the Foundation for Open Access Statistics <a class="uri" href="http://www.foastat.org/">http://www.foastat.org/</a>
-</p>
-<p class="footer-issue">
-$if(month)$
-$if(year)$
-$if(volume)$
-$if(issue)$
-$month$ $year$, Volume $volume$, Issue $issue$
-$endif$
-$endif$
-$endif$
-$endif$
-$if(doi)$
-<br><a href="https://doi.org/$doi$" class="doi">doi: $doi$</a>
-$endif$
-</p>
-<p class="info-dates">
-$if(submitdate)$<em>Submitted:</em> $submitdate$$endif$<br>
-$if(acceptdate)$<em>Accepted:</em> $acceptdate$$endif$
-</p>
+<div>
+  <p>Postaddress: </p>
+  <p>Besöksaddress:</p>
+  <p>Org nr: $orgnr$</p>
+  <p>$url$</p>
+</div>
 </div>
 </footer>
 </article>
-
+-->
 $for(include-after)$
 $include-after$
 $endfor$

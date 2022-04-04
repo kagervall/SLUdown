@@ -5,7 +5,9 @@
 #' @return An R Markdown output format.
 #' @export
 allman <- function(
-  ..., css = c('jss-fonts', 'jss-page', 'jss'),
+  ..., css = system.file('resources', 'css',
+                         c('SLU-fonts.css', 'SLU-page.css', 'SLU.css'),
+                         package = 'SLUdown', mustWork = TRUE),
   template = system.file('resources', 'html', 'allman.html', package = "SLUdown", mustWork = TRUE),
   csl = pagedown:::pkg_resource('csl', 'journal-of-statistical-software.csl'),
   highlight = NULL, pandoc_args = NULL

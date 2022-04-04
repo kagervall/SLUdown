@@ -1,13 +1,19 @@
 ---
+orgname: "Institutionen för akvatiska resurser"
+orgadditional: "Befattningshavare"
+sluid: "SLU.aqua.YYYY.n.n-n"
+doctype: "DOCUMENTTYP"
+orgnr: "202100-2817"
+date: "YYYY-MM-DD"
 author:
-  - name: First Author
-    email: <first.author@slu.se>
+  - name: Förste Författare
+    email: <forste.forfattare@slu.se>
   - name: Second Author
     email: <first.author@slu.se>
-title: "A Capitalized Title: Something about a Package **foo**"
-shorttitle: "**foo**:  A Capitalized Title"
+title: "Dokumentets titel som kan vara rejält lång"
+shorttitle: "Korttitel"
 abstract: |
-  The abstract of the article.
+  Abstrakt om du behöver.
 # at least one keyword must be supplied
 keywords: [keywords, not capitalized, "[Java]{.proglang}"]
 links-to-footnotes: true
@@ -15,37 +21,64 @@ paged-footnotes: true
 bibliography: index.bib
 output: 
   SLUdown::allman:
-    self_contained: false
+    self_contained: true
 # uncomment this line to produce HTML and PDF in RStudio:
 #knit: pagedown::chrome_print
 ---
 
-# Introduction
+# Introduktion
 
-This template demonstrates some of the basic [markdown]{.proglang} you'll need to know to create a JSS article with **pagedown** [@R-pagedown].
+Denna mall försöker återskapa utseendet av SLUs Word-mall **allman-sv** som ett
+[markdown]{.proglang} dokument. Metadata om dokumentet fylls i mallens YAML-header. 
+Idé, mall och kod kommer till stor del från paketet **pagedown** [@R-pagedown].
 
-## Code formatting
 
-You should use **Pandoc**'s [markdown]{.proglang} but you also can use $\LaTeX$ commands:
 
-* [Java]{.proglang} or $\proglang{Java}$ 
-* **plyr**, [plyr]{.pkg} or $\pkg{plyr}$
-* `print("abc")` or $\code{print("abc")}$
+# Funktionalitet
 
-# [R]{.proglang} code
+All funktionalitet som finns i "vanliga" [Rmarkdown]{.proglang} bör fungera som vanligt
+t.ex. använda [R]{.proglang} inline i texten eller i kodblock, inkudera resultat i
+tabeller eller figurer m.m. Det finns även stöd för att formattera avancerade matematiska
+formler. Det finns även stöd för referenser (ej testat av mig än). Precis som
+orginalmallen finns tre nivåer av rubriker definierade vilket demonstreras nedan.
 
-Can be inserted in regular [R Markdown]{.proglang} blocks.
+## [R]{.proglang} kod
+
+Denna text ligger på nivå 2.
+
+### Kodblock
+Denna text ligger på nivå 3.
+
+Kodblock kan läggas in vilket kan vara bra framförallt när man vill demonstrera hur något
+är gjort.
 
 ```{r}
 x <- 1:10
 x
 ```
 
-# Render the document
+### Inline kod
 
-If you use the option `self_contained: false` (see line \#22 of this `Rmd` file), don't click on the `Knit` button in RStudio. Use instead the **xaringan** [@R-xaringan] RStudio add-in _Infinite Moon Reader_.
+Kod kan även läggas inline i texten vilket är ett sätt att få in beräknade resultat
+direkt i texten. Följande rad innehäller det datum du formaterar detta dokument:
 
-# References {-}
+Denna PDF formaterades `r Sys.Date()`.
+
+# Formatering till PDF
+
+Det enkaste sättet att formatera till PDF är att klicka på knappen "Knit" i Rstudio.
+Ändra inte "output:" i mallens header. Det går endast att formatera till en HTML-fil
+som sedan sparas som PDF.
+
+När man klickat "Knit" bör dokumentet dyka upp i Rstudios HTML-viewer efter en stund.
+Om allt ser bra ut klickar man på "Open in browser" vilket öppnar dokumentet i din
+vanliga webläsare. Här väljer man då "Print" och sparar som PDF.
+
+Den HTML-fil som skapats kan naturligtvis också delas eller publiceras på en web-server.
+Om publicering på web är målet borde vi dock fundera på andra typer av mallar som 
+genererar snygga filer som är bättre anpassade till webben (interaktivitet, menyer m.m)
+
+# Referenser {-}
 
 ```{r, include=FALSE}
 knitr::write_bib(c(.packages(), 'pagedown', 'xaringan'), 'index.bib')

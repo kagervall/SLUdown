@@ -1,47 +1,76 @@
 /* page size */
 @page {
   size: 210mm 297mm;
+    margin-top: 35mm;
+    margin-bottom: 25mm;
+    margin-left: 35mm;
+    margin-right: 35mm;
 }
-
-/* first page */
-@page :first {
-  @top-center {
-    content: none;
-  }
-  @top-right {
-    content: none;
-  }
-}
-
-/* left page */
 .shorttitle {
   position: running(runningTitle);
 }
-
-@page :left {
-  @top-left {
-    content: counter(page);
+/*
+.document-footer {
+  position: running(firstpageFooter);
+}
+*/
+/* first page */
+@page :first {
+  margin-top: 10mm;
+  @top-center {
+    content: none;
   }
+  @left-top {
+    content: " ";
+    background-image: url(https://kagervall.se/SLUdown/SLUlogo_notext.png);
+    background-position: 60px 0px;
+    background-repeat: no-repeat;
+  }
+  @bottom-center {
+    content: "FP firstpageFooter"
+/*    content: element(firstpageFooter); */
+  }
+}
+/* 
+@page :right {
   @top-center {
     content: element(runningTitle);
     width: 150mm;
     font-style: italic;
   }
+  @bottom-left-corner {
+    content: "right " counter(page) "/" counter(pages);
+  }
 }
+@page :left {
+  @top-center {
+    content: element(runningTitle);
+    width: 150mm;
+    font-style: italic;
+  }
+  @bottom-right-corner {
+    content: "left " counter(page) "/" counter(pages);
+  }
+}
+*/
+
+
 
 .pagedjs_left_page .pagedjs_margin-top-center {
   font-size: 16px;
 }
 
 /* right page */
+/*
 @page :right {
   @top-right {
     content: counter(page);
   }
   @top-center {
-    content: "Journal of Statistical Software";
+    content: "SLU";
     width: 150mm;
     font-size: 16px;
     font-style: italic;
   }
 }
+*/
