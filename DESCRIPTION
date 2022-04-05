@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Anders Kagervall
 Maintainer: Anders Kagervall <yourself@somewhere.net>
 Description: Rmarkdown template for SLU. Based om the Word-template "allman".
-Imports: rmarkdown (>= 2.13)
+Imports: rmarkdown (>= 2.13), pagedown
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
