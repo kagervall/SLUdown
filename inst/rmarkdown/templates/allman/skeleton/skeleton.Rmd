@@ -3,7 +3,6 @@ orgname: "Institutionen för akvatiska resurser"
 orgadditional: "Befattningshavare"
 sluid: "SLU.aqua.YYYY.n.n-n"
 doctype: "DOCUMENTTYP"
-orgnr: "202100-2817"
 date: "YYYY-MM-DD"
 author:
   - name: Förste Författare
@@ -15,7 +14,14 @@ shorttitle: "Korttitel"
 abstract: |
   Abstrakt om du behöver.
 # at least one keyword must be supplied
-keywords: [keywords, not capitalized, "[Java]{.proglang}"]
+keywords: [keywords, not capitalized, fisk, förvaltning]
+postaladdr: "178 93 Drottningholm"
+visitaddr: "Stångholmsvägen 2"
+orgnr: "202100-2817"
+url: "www.slu.se"
+phone: "018-67 10 00 (vx)"
+mobilephone: "070-123 45 67"
+footeremail: "fornamn.efternamn@slu.se"
 links-to-footnotes: true
 paged-footnotes: true
 bibliography: index.bib
@@ -32,6 +38,20 @@ Denna mall försöker återskapa utseendet av SLUs Word-mall **allman-sv** som e
 [markdown]{.proglang} dokument. Metadata om dokumentet fylls i mallens YAML-header. 
 Idé, mall och kod kommer till stor del från paketet **pagedown** [@R-pagedown].
 
+# Formatering till PDF
+
+Det enkaste sättet att formatera till PDF är att klicka på knappen "Knit" i Rstudio.
+Ändra inte "output:" i mallens header. Det går endast att formatera till en HTML-fil
+som sedan sparas som PDF.
+
+När man klickat "Knit" bör dokumentet dyka upp i Rstudios HTML-viewer efter en stund.
+Om allt ser bra ut klickar man på "Open in browser" vilket öppnar dokumentet i din
+vanliga webläsare. Här väljer man då "Print" och sparar som PDF. Innan man sparar skall
+man välja att stänga av marginaler och sidnumrering då detta redan gjorts i CSS.
+
+Den HTML-fil som skapats kan naturligtvis också delas eller publiceras på en web-server.
+Om publicering på web är målet borde vi dock fundera på andra typer av mallar som 
+genererar snygga filer som är bättre anpassade till webben (interaktivitet, menyer m.m)
 
 
 # Funktionalitet
@@ -64,19 +84,13 @@ direkt i texten. Följande rad innehäller det datum du formaterar detta dokumen
 
 Denna PDF formaterades `r Sys.Date()`.
 
-# Formatering till PDF
+# Utfyllnad för att testa sidbrytning m.m.
 
-Det enkaste sättet att formatera till PDF är att klicka på knappen "Knit" i Rstudio.
-Ändra inte "output:" i mallens header. Det går endast att formatera till en HTML-fil
-som sedan sparas som PDF.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia neque sed metus placerat eleifend. Praesent rutrum ligula sit amet ipsum feugiat mollis. Cras vitae euismod ante, nec iaculis ipsum. Cras porta metus nec ultricies lacinia. Nam gravida magna quis facilisis tincidunt. Vestibulum ornare scelerisque ex, vitae tristique urna ornare ac. Aenean quis diam et turpis placerat blandit eget ac urna. Ut eu justo eget sem lacinia dapibus. Vivamus at pulvinar dolor, eget viverra ante. Nulla egestas non quam suscipit imperdiet. Vivamus ut aliquam mi.
 
-När man klickat "Knit" bör dokumentet dyka upp i Rstudios HTML-viewer efter en stund.
-Om allt ser bra ut klickar man på "Open in browser" vilket öppnar dokumentet i din
-vanliga webläsare. Här väljer man då "Print" och sparar som PDF.
+Maecenas rhoncus eget lectus eu congue. Maecenas vitae velit porttitor neque vehicula venenatis. Cras id efficitur mi. Sed purus est, interdum in dui et, semper eleifend lorem. Nunc vel semper mi, eget porta mi. Sed facilisis sagittis elit ac porttitor. Nullam a consequat sapien.
 
-Den HTML-fil som skapats kan naturligtvis också delas eller publiceras på en web-server.
-Om publicering på web är målet borde vi dock fundera på andra typer av mallar som 
-genererar snygga filer som är bättre anpassade till webben (interaktivitet, menyer m.m)
+Donec quis nunc velit. Maecenas enim nisi, iaculis sit amet nibh at, pulvinar tempor neque. Suspendisse tincidunt rhoncus augue eget viverra. Sed tellus diam, pharetra id felis nec, tincidunt elementum ante. Sed elementum nisl id ex dignissim, sit amet cursus lacus iaculis. Donec sapien mauris, finibus non felis id, convallis venenatis mi. Proin vitae sodales quam. Morbi sit amet tincidunt libero, vel elementum leo. Pellentesque dictum arcu ac augue aliquet, sit amet porta velit molestie. Quisque sed dui interdum, hendrerit ante vitae, vehicula neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget urna consectetur, ullamcorper justo dapibus, pellentesque ante. In egestas lacus sit amet odio vulputate, hendrerit faucibus augue dignissim. Aenean non velit a leo finibus vestibulum eget vel ante.
 
 # Referenser {-}
 
